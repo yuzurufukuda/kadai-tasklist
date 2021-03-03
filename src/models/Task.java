@@ -26,7 +26,7 @@ public class Task {
     private Integer id;
 
     @Column(name = "createdAt", nullable = false)
-    private Timestamp cratedAt;
+    private Timestamp createdAt;
 
     @Column(name = "updatedAt", nullable = false)
     private Timestamp updatedAt;
@@ -42,12 +42,12 @@ public class Task {
         this.id = id;
     }
 
-    public Timestamp getCratedAt() {
-        return cratedAt;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCratedAt(Timestamp cratedAt) {
-        this.cratedAt = cratedAt;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Timestamp getUpdatedAt() {
@@ -65,6 +65,7 @@ public class Task {
     public void setContent(String content) {
         this.content = content;
     }
+
 
 
 
