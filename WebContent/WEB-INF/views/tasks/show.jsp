@@ -4,15 +4,26 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${message != null}">
+            <c:when test="${task != null}">
                 <h2>id : ${task.id} のタスクの詳細ページ</h2>
-
-                <p>タスク:<c:out value="${task.content}" /></p>
-                <p>作成日時<fmt:formatDate value="${task.createdAt}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
-                <p>更新日時<fmt:formatDate value="${task.updatedAt}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
-
-                <p><a href="<c:url value='/index' />"></a></p>
-                <p><a href="<c:url value='/edit?id=${task.id}' />">このタスクを編集する</a></p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>タスク</th>
+                        <td><c:out value="${task.content}" /></td>
+                    </tr>
+                    <tr>
+                        <th>作成日時</th>
+                        <td><fmt:formatDate value="${task.createdAt}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                    </tr>
+                    <tr>
+                        <th>更新日時</th>
+                        <td><fmt:formatDate value="${task.updatedAt}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                    </tr>
+                    <p><a href="<c:url value='/index' />"></a></p>
+                    <p><a href="<c:url value='/edit?id=${task.id}' />">このタスクを編集する</a></p>
+                    </tbody>
+                </table>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした</h2>
