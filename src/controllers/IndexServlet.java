@@ -47,7 +47,7 @@ public class IndexServlet extends HttpServlet {
                            .getResultList();
 
         // 全件数を取得
-        long messages_count = (long)em.createNamedQuery("getTasklitCount", Long.class).getSingleResult();
+        long tasks_count = (long)em.createNamedQuery("getTasklistCount", Long.class).getSingleResult();
 
         em.close();
 
