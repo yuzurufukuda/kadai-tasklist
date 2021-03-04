@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.tasks;
 import utils.DBUtil;
 /**
  * Servlet implementation class EditServlet
@@ -33,7 +33,7 @@ public class EditServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         //該当のIDのメッセージを1件のみをデータベースから取得
-        Task t = em.find(Task.class, Integer.parseInt(request.getParameter("id")));
+        tasks t = em.find(tasks.class, Integer.parseInt(request.getParameter("id")));
         em.close();
 
         // タスク情報とセッションIDをリクエストスコープに登録

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.tasks;
 import models.validators.MessageValidator;
 import utils.DBUtil;
 
@@ -37,7 +37,7 @@ public class CreateServlet extends HttpServlet {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())){
             EntityManager em = DBUtil.createEntityManager();
-            Task t = new Task();
+            tasks t = new tasks();
 
             String content = request.getParameter("content");
             t.setContent(content);

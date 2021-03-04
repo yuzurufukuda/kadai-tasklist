@@ -15,15 +15,15 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllTasklist",
-            query = "SELECT t FROM Task AS t ORDER BY t.id DESC"
+            query = "SELECT t FROM tasks AS t ORDER BY t.id DESC"
     ),
     @NamedQuery(
             name = "getTasklistCount",
-            query = "SELECT COUNT(t) FROM Task AS t"
+            query = "SELECT COUNT(t) FROM tasks AS t"
     )
 })
 @Table(name = "tasks")
-public class Task {
+public class tasks {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

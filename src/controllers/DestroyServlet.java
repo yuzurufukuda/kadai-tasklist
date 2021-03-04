@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.tasks;
 import utils.DBUtil;
 /**
  * Servlet implementation class DestroyServlet
@@ -34,7 +34,7 @@ public class DestroyServlet extends HttpServlet {
 
             // セッションスコープからタスクのIDを取得して
             // 該当のIDのメッセージを1件のみをデータベースから取得
-            Task t = em.find(Task.class, (Integer)(request.getSession().getAttribute("task_id")));
+            tasks t = em.find(tasks.class, (Integer)(request.getSession().getAttribute("task_id")));
 
             em.getTransaction().begin();
             em.remove(t);
